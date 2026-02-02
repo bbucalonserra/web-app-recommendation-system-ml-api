@@ -2,6 +2,28 @@
 
 This repository features a complete, decoupled architecture for a Credit Recommendation System. It demonstrates the integration of a Machine Learning Inference Engine with a professional Web Infrastructure, bridging the gap between Data Science modeling and Software Engineering.
 
+## Project Structure
+
+```text
+.
+├── ml_api/                  # Machine Learning Service (FastAPI)
+│   ├── data/                # Raw datasets for inference
+│   ├── models/              # Serialized model files (.pkl)
+│   ├── server/              # API source code (main.py, models.py)
+│   └── requirements.txt     # Python dependencies
+├── src/                     # Web Application Service (Node.js)
+│   ├── config/              # Database and app configurations
+│   ├── data/                # Local data storage
+│   ├── public/              # Static assets (CSS)
+│   ├── routes/              # Express route handlers
+│   ├── views/               # EJS templates for the frontend
+│   └── server.js            # Node.js entry point
+├── assets/                  # General project assets
+├── db_schema.sql            # SQL script for database initialization
+├── package.json             # Node.js dependencies and scripts
+├── .env                     # Environment variables (Local only)
+└── README.md                # Project documentation
+
 ## Architecture
 
 The project is structured as a microservices-based application to ensure scalability and separation of concerns:
@@ -16,17 +38,24 @@ git clone https://github.com/bbucalonserra/web-app-recommendation-system-ml-api.
 cd web-app-recommendation-system-ml-api
 
 2. ML Inference Server (FastAPI):
-cd ml-api
+Open a new terminal and navigate to the ml_api folder:
+
+cd ml_api
 python -m venv venv
-source venv/bin/activate (or venv\Scripts\activate on Windows)
+source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-uvicorn main:app --host 0.0.0.0 --port 8000
+uvicorn server.main:app --reload
+
+*The ML API will be running at http://localhost:8000.*
 
 3. Web Application Server (Node.js):
-(Open a new terminal)
-cd web-app
+From the root directory, run the following commands:
+
 npm install
-npm start
+npm run build-db
+npm run start
+
+*The web interface will be available at http://localhost:3000.*
 
 ## Tech Stack
 
