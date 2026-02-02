@@ -23,6 +23,7 @@ This repository features a complete, decoupled architecture for a Credit Recomme
 ├── package.json             # Node.js dependencies and scripts
 ├── .env                     # Environment variables (Local only)
 └── README.md                # Project documentation
+``` 
 
 ## Architecture
 
