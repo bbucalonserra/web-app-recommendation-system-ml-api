@@ -93,8 +93,8 @@ npm run start
 ## Tech Stack
 
 ### Backend & Machine Learning Engineering and Data Science
-* **Data Science:** Binary Classification Problem using Logistic Regression for 8 products.Logistics Regression for 8 producyd
-* **Machine Learning:** Python, Scikit-Learn, Pandas.
+* **Data Science:** Binary Classification Problem using Logistic Regression for 8 products.
+* **Machine Learning:** SQL, Python, Scikit-Learn, Pandas, Numpy, Matplotlib.
 * **Inference API:** FastAPI, Uvicorn (RESTful Architecture).
 * **Server Orchestration:** Node.js, Express.
 
@@ -103,11 +103,10 @@ npm run start
 * **Logic:** JavaScript (Vanilla/ES6+).
 
 ## Usage Note
-
 Once both servers are running, access the web interface at http://localhost:3000. The frontend sends user data to the Node.js server, which then communicates with the FastAPI endpoint at http://localhost:8000/predict to return the credit recommendation in real-time.
 
 ## Project Structure
 
-* /ml-api: FastAPI source code, model serialization (pickle/joblib), and inference logic.
-* /web-app: Node.js server, middleware, and static assets (HTML/CSS/JS).
+* /ml-api: Machine Learning server, FastAPI source code, model serialization (pickle/joblib), and inference logic.
+* /src: Node.js server, middleware, and static assets (HTML/CSS/JS).
 * /research: Jupyter Notebooks containing Exploratory Data Analysis (EDA) and Model Training.
