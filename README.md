@@ -1,6 +1,6 @@
 # Credit Recommendation System (End-to-End MLE)
 
-This repository features a complete, decoupled architecture for a Credit Recommendation System. It demonstrates the integration of a Machine Learning Inference Engine with a professional Web Infrastructure, bridging the gap between Data Science modeling and Software Engineering.
+This repository features a complete architecture for a Credit Recommendation System. It demonstrates the integration of a Machine Learning Inference Engine with a professional Web Infrastructure, bridging the gap between Data Science modeling and Software Engineering.
 
 ## Project Structure
 
