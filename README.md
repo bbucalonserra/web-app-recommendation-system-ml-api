@@ -35,26 +35,33 @@ The project is structured as a microservices-based application to ensure scalabi
 ## Installation & Setup
 
 1. Clone the repository:
+
+```bash
 git clone https://github.com/bbucalonserra/web-app-recommendation-system-ml-api.git
 cd web-app-recommendation-system-ml-api
+```
 
 2. ML Inference Server (FastAPI):
 Open a new terminal and navigate to the ml_api folder:
 
+```bash
 cd ml_api
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-uvicorn server.main:app --reload
+uvicorn server.main:app
+```
 
 *The ML API will be running at http://localhost:8000.*
 
 3. Web Application Server (Node.js):
 From the root directory, run the following commands:
 
+```bash
 npm install
 npm run build-db
 npm run start
+```
 
 *The web interface will be available at http://localhost:3000.*
 
