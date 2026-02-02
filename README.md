@@ -26,7 +26,7 @@ This repository features a complete, decoupled architecture for a Credit Recomme
 ``` 
 
 ## Tutorial
-![System Demonstration](assets\server_ml_api.gif)
+![System Demonstration](assets/server_ml_api.gif)
 
 
 ## Model Methodology & Parameter Justification
