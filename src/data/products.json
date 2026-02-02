@@ -1,0 +1,58 @@
+[
+  {
+    "id": "personal_loan",
+    "name": "Personal Loan",
+    "description": "Flexible credit for your personal goals with competitive rates.",
+    "category": "General Credit",
+    "probability": 0.85
+  },
+  {
+    "id": "mortgage",
+    "name": "Mortgage",
+    "description": "Real estate financing to help you achieve home ownership.",
+    "category": "Real Estate",
+    "probability": 0.12
+  },
+  {
+    "id": "auto_loan",
+    "name": "Auto Loan",
+    "description": "Get behind the wheel with specialized vehicle financing plans.",
+    "category": "Vehicles",
+    "probability": 0.45
+  },
+  {
+    "id": "credit_card",
+    "name": "Credit Card",
+    "description": "Manage daily expenses and enjoy exclusive reward programs.",
+    "category": "Payment Methods",
+    "probability": 0.78
+  },
+  {
+    "id": "overdraft",
+    "name": "Overdraft",
+    "description": "An immediate emergency limit linked to your checking account.",
+    "category": "Banking Services",
+    "probability": 0.30
+  },
+  {
+    "id": "payroll_loan",
+    "name": "Payroll Loan",
+    "description": "Low-interest loans with convenient automatic payroll deductions.",
+    "category": "Secured Credit",
+    "probability": 0.95
+  },
+  {
+    "id": "student_loan",
+    "name": "Student Loan",
+    "description": "Invest in your future with flexible repayment terms for education.",
+    "category": "Education",
+    "probability": 1.00
+  },
+  {
+    "id": "working_capital_loan",
+    "name": "Working Capital Loan",
+    "description": "Boost your business liquidity and support operational growth.",
+    "category": "Business",
+    "probability": 0.22
+  }
+]

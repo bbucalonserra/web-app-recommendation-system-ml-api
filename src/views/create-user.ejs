@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1> User creation<h1>
+    </header>
+
+    <!-- Here, we will use the POST method to send the client data to the database.
+    In addition, action is nothing more than the destination address. That is, it goes to the endpoint
+    (route) "save-to-database" and executes what is there. In other words, it goes to the route and main executes
+    the function that is inside it. -->
+
+    <main>
+        <!-- Error message, in case of error. -->
+        <% if (errorMessage) { %>
+            <div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 15px; border-radius: 5px;">
+                <%= errorMessage %>
+            </div>
+        <% } %>
+
+        <!-- Action: defines where the data will be sent, that is, the route. In this case,
+        it will be sent via POST to the /create-user endpoint. -->
+        <form action="/create-user" method="POST">
+                <label>Name: </label> <br>
+                <input type="text" id="name" name="name"> <br>
+                
+                <label>Last Name: </label> <br>
+                <input type="text" id="last_name" name="last_name"> <br>
+
+                <label>Username: </label> <br>
+                <input type="text" id="username" name="username"> <br>
+
+                <label>Password: </label> <br>
+                <input type="password" id="password" name="password"> <br>
+
+                <button>Create</button> <br>
+            </form>
+
+            <a href="/">Back to homepage</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Credit Recommendation Service. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

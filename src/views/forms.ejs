@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <header>
+        <h1>First of all, let's start by answering a few questions to improve your experience with us.</h1>
+    </header>
+    <main>
+        <form method="post" action="/forms">
+
+            <!--First Question-->
+            <p>How old are you?</p>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required>
+
+            <!--Second Question-->
+            <p>What is your gender?</p>
+            <!--NOTE: the ID is the unique identifier in HTML-->
+            <!--NOTE: type is the input type (of the form).-->
+            <!--NOTE: name is the group name; radio buttons with the same name allow only one to be selected.-->
+            <!--NOTE: value is the VALUE SENT TO THE SERVER when checked.-->
+            <!--NOTE: for points to the input id-->
+            <!--NOTE: the required field makes it mandatory to fill out the form.-->
+            <!--NOTE: for radio inputs, HTML understands that if the first one is required, all others WITH
+            THE SAME NAME (name) will also be required.-->
+            <input type="radio" id="male-selection" name="sex" value="1" required>
+            <label for="male-selection">Male</label><br>
+
+            <input type="radio" id="female-selection" name="sex" value="0">
+            <label for="female-selection">Female</label><br>
+
+            <!--Third Question-->
+            <p>What is your education level?</p>
+            <input type="radio" id="primary-education" name="education" value="1" required>
+            <label for="primary-education">Primary</label><br>
+
+            <input type="radio" id="secondary-education" name="education" value="2">
+            <label for="secondary-education">Secondary</label><br>
+
+            <input type="radio" id="bachelor-education" name="education" value="3">
+            <label for="bachelor-education">Bachelor</label><br>
+
+            <input type="radio" id="postgraduate-education" name="education" value="4">
+            <label for="postgraduate-education">Postgraduate</label><br>
+
+            <!--Fourth Question-->
+            <p>Do you have children?</p>
+            <input type="radio" id="has-children" name="has_children" value="1" required>
+            <label for="has-children">Yes</label><br>
+
+            <input type="radio" id="has-not-children" name="has_children" value="0">
+            <label for="has-not-children">No</label><br>
+
+            <!--Fifth Question-->
+            <p>Do you have any property in your name?</p>
+            <input type="radio" id="has-property" name="has_property" value="1" required>
+            <label for="has-property">Yes</label><br>
+
+            <input type="radio" id="has-not-property" name="has_property" value="0">
+            <label for="has-not-property">No</label><br>
+
+            <!--Sixth Question-->
+            <p>Do you have a car?</p>
+            <input type="radio" id="has-car" name="has_car" value="1" required>
+            <label for="has-car">Yes</label><br>
+
+            <input type="radio" id="has-not-car" name="has_car" value="0">
+            <label for="has-not-car">No</label><br>
+
+            <!--Seventh Question-->
+            <p>Have you ever had a loan?</p>
+            <input type="radio" id="has-loan" name="ever_loan" value="1" required>
+            <label for="has-loan">Yes</label><br>
+
+            <input type="radio" id="has-not-loan" name="ever_loan" value="0">
+            <label for="has-not-loan">No</label><br>
+
+            <!--Eighth Question-->
+            <p>Did you already pay your loan?</p>
+            <input type="radio" id="has-paid-loan" name="loan_paid" value="1" required>
+            <label for="has-paid-loan">Yes</label><br>
+
+            <input type="radio" id="has-not-paid-loan" name="loan_paid" value="0">
+            <label for="has-not-paid-loan">No</label><br>
+
+            <!--Ninth Question-->
+            <p>What is your annual salary range?</p>
+            <input type="radio" id="salary1" name="annual_salary" value="1" required>
+            <label for="salary1">Under $30,000</label><br>
+
+            <input type="radio" id="salary2" name="annual_salary" value="2">
+            <label for="salary2">$30,000 - $50,000</label><br>
+
+            <input type="radio" id="salary3" name="annual_salary" value="3">
+            <label for="salary3">$50,000 - $80,000</label><br>
+
+            <input type="radio" id="salary4" name="annual_salary" value="4">
+            <label for="salary4">$80,000 - $120,000</label><br>
+
+            <input type="radio" id="salary5" name="annual_salary" value="5">
+            <label for="salary5">Over $120,000</label><br>
+
+            <!--Tenth Question-->
+            <p>What is your total invested amount?</p>
+            <input type="radio" id="inv1" name="invested_amount" value="1" required>
+            <label for="inv1">Less than $1,000</label><br>
+
+            <input type="radio" id="inv2" name="invested_amount" value="2">
+            <label for="inv2">$1,000 - $10,000</label><br>
+
+            <input type="radio" id="inv3" name="invested_amount" value="3">
+            <label for="inv3">$10,000 - $50,000</label><br>
+
+            <input type="radio" id="inv4" name="invested_amount" value="4">
+            <label for="inv4">More than $50,000</label><br>
+
+            <br>
+            <button type="submit">Submit</button>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Credit Recommendation Service. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

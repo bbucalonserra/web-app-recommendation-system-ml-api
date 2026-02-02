@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Credit Recommendation Platform</title>
+</head>
+<body>
+
+    <header>
+        <h1>Credit Solutions</h1>
+        <p>Select the financial product that best suits your needs.</p>
+    </header>
+
+    <main>
+        <h2>Our Products</h2>
+        <section id="recommendations">
+            <!-- 
+            There are three ways to implement in EJS, they are:
+            -  < % = ... % > Escaped output, it sanitizes the content, used in 99% of cases.
+            - < % - ... % > Outputs exactly the text as it is in the JSON, so if the JSON already has tags, use this one.
+            - < % ... % > Does not output anything, usually used for functions such as forEach, else, const, etc.
+           
+           Below, we place only what is meant to be repeated in the logic. Tags
+           do not stay inside "< %", etc.
+           
+            -->
+            <% if (products.length > 0) { %>
+                <% products.forEach(function (p) { %>
+                    <article class="product-card">
+                        <span class="category-badge"><%= p.category %></span>
+                        <h3><%= p.name %></h3>
+                        <p><%= p.description %></p>
+                        
+                        <div class="match-text" data-probability="<%= p.probability %>">
+                            Matching Score: <%= Math.round(p.probability * 1000) %>
+                        </div>
+                        
+                        <div class="match-container">
+                            <div class="match-bar" style="width: <%= Math.round(p.probability * 100) %>%;" data-probability="<%= p.probability %>"></div>
+                    </article>
+                <% }) %>
+            <% } %>
+        </section>
+        <br><br>
+        <a href="/forms">New forms</a><br>
+        <a href="/login">Logout</a>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Credit Recommendation Service. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

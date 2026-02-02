@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+    "start": "node src/server",
+    "dev": "node --watch --env-file=.env src/server.js",
+    "build-db": "sqlite3 src/data/database.db < db_schema.sql",
+    "clean-db": "rm -f src/data/database.db",
+    "ml-server": "uvicorn ml_api.server.main:app --reload"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

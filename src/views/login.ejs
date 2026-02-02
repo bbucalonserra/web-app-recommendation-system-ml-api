@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1> Login </h1>
+    </header>
+
+
+    <% if (erro) { %>
+        <p style="color: red;"><%= erro %></p>
+    <% } %>
+
+    <form method="POST" action="/login">
+        <label>Username: </label> <br>
+        <input type="text" id="username" name="username"> <br>
+        <label>Password: </label> <br>
+        <input type="password" id="password" name="password"> <br>
+
+        <!--The button, when inside a form, acts as a trigger; when clicked, it will submit all
+        inputs and send them to the action route. -->
+        <button>Login</button>
+    </form>
+
+    <a href="/create-user">Don't have a login? Create a new user here.</a> <br>
+
+    <a href="/">Back to homepage</a>
+
+    <footer>
+        <p>&copy; 2026 Credit Recommendation Service. All rights reserved.</p>
+    </footer>
+</body>
+</html>
