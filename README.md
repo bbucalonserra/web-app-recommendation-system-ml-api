@@ -25,6 +25,27 @@ This repository features a complete, decoupled architecture for a Credit Recomme
 └── README.md                # Project documentation
 ``` 
 
+
+## Model Methodology & Parameter Justification
+
+The core of the recommendation engine is based on **Logistic Regression** chosen for its interpretability and efficiency in binary classification.
+
+* **Multi-product Strategy:** The system orchestrates 8 distinct credit products, each utilizing calibrated decision thresholds to optimize approval rates.
+
+The model optimizes the following cost function (Log-Loss with $L_2$ regularization), where the parameter $C$ controls the trade-off between the log-likelihood and the penalty:
+
+$$J, Log Odds (\beta) = C \sum_{i=1}^{n} \log(1 + e^{-y_i ( \beta_0 + \sum_{j=1}^{m} \beta_j x_{ij} )}) + \frac{1}{2} \sum_{j=1}^{m} \beta_j^2$$
+
+* **Hyperparameter Configuration:**
+    * **C (Regularization) [0.000009]:** Strong regularization applied to control the magnitude of the Betas (Coefficients), preventing inflation and ensuring the model generalizes well to unseen transactional data.
+    * **Solver [LBFGS]:** Selected for its computational efficiency, utilizing second-order derivatives (Hessian approximation) for faster gradient convergence.
+    * **Penalty [L2]:** Ridge regression was implemented to handle multicollinearity among features while maintaining all predictors in the model.
+    * **Max Iterations [10,000]:** Set high enough to guarantee convergence in complex feature spaces without bottlenecking training time.
+    * **Tolerance [0.001]:** Defines the stopping criterion; ensures the optimization process halts only when Beta updates become negligible, avoiding premature convergence.
+    * **Class Weights:** Calibrated to handle the intrinsic class imbalance of credit approval labels, preventing bias towards the majority class.
+    * **Warm Start [True]:** Optimized for iterative development, allowing the model to reuse coefficients from previous runs to accelerate the convergence of the objective function.
+    * **n_jobs [-1]:** Configured for maximum hardware utilization through parallel processing.
+
 ## Architecture
 
 The project is structured as a microservices-based application to ensure scalability and separation of concerns:
@@ -67,7 +88,8 @@ npm run start
 
 ## Tech Stack
 
-### Backend & MLE
+### Backend & Machine Learning Engineering and Data Science
+* **Data Science:** Binary Classification Problem using Logistic Regression for 8 products.Logistics Regression for 8 producyd
 * **Machine Learning:** Python, Scikit-Learn, Pandas.
 * **Inference API:** FastAPI, Uvicorn (RESTful Architecture).
 * **Server Orchestration:** Node.js, Express.
