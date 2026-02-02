@@ -68,7 +68,7 @@ Open a new terminal and navigate to the ml_api folder:
 ```bash
 cd ml_api
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/Scripts/activate # Windows: venv\bin\activate
 pip install -r requirements.txt
 uvicorn server.main:app
 ```
