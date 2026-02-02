@@ -28,8 +28,9 @@ This repository features a complete, decoupled architecture for a Credit Recomme
 ## Tutorial
 ![System Demonstration](assets/server_ml_api.gif)
 
+[Check in MP4 format here:](assets/server_ml_api.mp4)
 
-## Model Methodology & Parameter Justification
+## Model Methodology & Parameter Tunning
 
 The core of the recommendation engine is based on **Logistic Regression** chosen for its interpretability and efficiency in binary classification.
 
