@@ -4,14 +4,15 @@ This repository features a complete architecture for a Credit Recommendation Sys
 
 For the Software Engineering side, applied concepts of:
 
-    * API and HTTP methods (GET, POST)
-    * Separation of concerns
-    * Authentication
-    * Authorisation
-    * Validation and Sanitisation
-    * Three-tier architecture
-    * Data Manipulation Language (DML) and Data Query Language (DQL) in SQL
-    * Database design
+* API and HTTP methods (GET, POST)
+* Separation of concerns
+* Authentication
+* Authorisation
+* Validation and Sanitisation
+* Three-tier architecture
+* Data Manipulation Language (DML) and Data Query Language (DQL) in SQL
+* Database design
+
 
 ## Project Structure
 
