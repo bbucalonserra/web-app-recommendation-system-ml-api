@@ -3,6 +3,7 @@
 This repository features a complete architecture for a Credit Recommendation System. It provides the integration of a Machine Learning Inference Engine with a Web Infrastructure applying three-tier architecture (server-side, middleware and data), bridging the gap between Data Science modeling and Software Engineering.
 
 For the Software Engineering side, applied concepts of:
+
     * API and HTTP methods (GET, POST)
     * Separation of concerns
     * Authentication
