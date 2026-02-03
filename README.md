@@ -52,6 +52,7 @@ The model optimizes the following cost function (Log-Loss with $L_2$ regularizat
 
 
 * **Hyperparameter Configuration:**
+
     $$
     J_{\text{weighted}}(\beta)
     =
