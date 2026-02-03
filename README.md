@@ -42,7 +42,7 @@ For the Software Engineering side, applied concepts of:
 
 [Check in MP4 format here:](assets/server_ml_api.mp4)
 
-## Model Methodology & Parameter Tunning
+# Model Methodology & Parameter Tunning
 
 The core of the recommendation engine is based on **Logistic Regression** chosen for its interpretability and efficiency in binary classification.
 
@@ -50,42 +50,31 @@ The core of the recommendation engine is based on **Logistic Regression** chosen
 
 The model optimizes the following cost function (Log-Loss with $L_2$ regularization), where the parameter $C$ controls the trade-off between the log-likelihood and the penalty:
 
-
 * **Hyperparameter Configuration:**
 
-    $$
-    J_{\text{weighted}}(\beta)
-    =
-    C \sum_{i=1}^{n}
-    w_{y_i}
-    \log\!\left(
-    1 + e^{-y_i \left( \beta_0 + \sum_{j=1}^{m} \beta_j x_{ij} \right)}
-    \right)
-    +
-    \frac{1}{2}
-    \sum_{j=1}^{m} \beta_j^2
-    $$
+$$
+J_{\text{weighted}}(\beta) = C \sum_{i=1}^{n} w_{y_i} \log\!\left( 1 + e^{-y_i \left( \beta_0 + \sum_{j=1}^{m} \beta_j x_{ij} \right)} \right) + \frac{1}{2} \sum_{j=1}^{m} \beta_j^2
+$$
 
+Where:
 
-    Where:
+$$
+w_k = \frac{n}{K \cdot n_k}
+$$
 
-    $$
-    w_k = \frac{n}{K \cdot n_k}
-    $$
+$$
+C = \frac{1}{\lambda}
+$$
 
-    $$
-    C = \frac{1}{\lambda}
-    $$
-
-    * **C (Regularization) [0.000009]:** Strong regularization applied to control the magnitude of the Betas (Coefficients), preventing inflation and ensuring the model generalizes well to unseen transactional data.
-    * **Solver [LBFGS]:** Selected for its computational efficiency, utilizing second-order derivatives (Hessian approximation) for faster gradient convergence.
-    * **Penalty [L2]:** Ridge regression was implemented to handle multicollinearity among features while maintaining all predictors in the model.
-    * **Max Iterations [10,000]:** Set high enough to guarantee convergence in complex feature spaces without bottlenecking training time.
-    * **Tolerance [0.001]:** Defines the stopping criterion; ensures the optimization process halts only when Beta updates become negligible, avoiding premature convergence.
-    * **Class Weights[True]:** Calibrated to handle the intrinsic class imbalance of credit approval labels, preventing bias towards the majority class.
-    * **Warm Start [True]:** Optimized for iterative development, allowing the model to reuse coefficients from previous runs to accelerate the convergence of the objective function.
-    * **n_jobs [-1]:** Configured for maximum hardware utilization through parallel processing.
-    * **fit_intercept [True]:** Set to find values of Beta 0, this is usefull in order to understand the natural bias of the model.
+* **C (Regularization) [0.000009]:** Strong regularization applied to control the magnitude of the Betas (Coefficients), preventing inflation and ensuring the model generalizes well to unseen transactional data.
+* **Solver [LBFGS]:** Selected for its computational efficiency, utilizing second-order derivatives (Hessian approximation) for faster gradient convergence.
+* **Penalty [L2]:** Ridge regression was implemented to handle multicollinearity among features while maintaining all predictors in the model.
+* **Max Iterations [10,000]:** Set high enough to guarantee convergence in complex feature spaces without bottlenecking training time.
+* **Tolerance [0.001]:** Defines the stopping criterion; ensures the optimization process halts only when Beta updates become negligible, avoiding premature convergence.
+* **Class Weights [True]:** Calibrated to handle the intrinsic class imbalance of credit approval labels, preventing bias towards the majority class.
+* **Warm Start [True]:** Optimized for iterative development, allowing the model to reuse coefficients from previous runs to accelerate the convergence of the objective function.
+* **n_jobs [-1]:** Configured for maximum hardware utilization through parallel processing.
+* **fit_intercept [True]:** Set to find values of Beta 0, this is useful in order to understand the natural bias of the model.
 
 ## Architecture
 
