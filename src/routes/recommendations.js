@@ -17,7 +17,6 @@ const productsTemplate = require('../data/products.json');
 // We pass the JSON as the second argument.
 router.get("/recommendations", function(req, res) {
     /*
-
     SUMMARY OF THE GET METHOD FOR RENDERING WITH ML SERVER:
 
     --------------------------------------------------
@@ -40,7 +39,6 @@ router.get("/recommendations", function(req, res) {
     */
 
 
-    
     // Retrieve the user from the session.
     const loggedUser = req.session.username;
 

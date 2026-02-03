@@ -7,7 +7,16 @@ const router = express.Router()
 // "Hey app (nickname for express), keep listening to the port, when someone knocks on it,"
 // "that is, makes a GET request ending with '/', you will send the response and render the EJS."
 router.get("/", function(req, res) {
-    return res.render("homepage.ejs")
+    
+    // Retrieving username saved during login or creation.
+    const loggedUser = req.session.username;
+
+    // If user hasn't logged in.
+    if (!loggedUser) {
+            return res.redirect("/login");
+        }
+    
+    return res.redirect("/recommendations");
 });
 
 // Export router.

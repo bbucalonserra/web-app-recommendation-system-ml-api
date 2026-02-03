@@ -13,6 +13,9 @@ const session = require('express-session');
 // Importing the path module.
 const path = require('path');
 
+// Sanitizer.
+const sanitizer = require('express-sanitizer');
+
 // Call everything that is in the routes.
 // The REQUIRE
 const main = require("./routes/main");
@@ -34,17 +37,20 @@ app.use(express.urlencoded({ extended: true }));
 // Tell that public is static.
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Use sanitize.
+app.use(sanitizer());
+
 // Keeps it in memory. Creates a cookie in the browser that stores an
 // encrypted identification code (connect.sid). On the server, in RAM memory,
 // it reserves space to store information that survives while the user
 // jumps from page to page, that is, everything that starts with req.session.
 app.use(session({
-    secret: 'chave-bruni', // It can be any phrase
+    secret: 'any-special-secret-text', // It can be any phrase
     resave: false, // Does not save the session if there are no changes
-    saveUninitialized: true, // Creates a session even if nothing has been stored
+    saveUninitialized: false, // Creates a session even if nothing has been stored
     cookie: { 
         secure: false, // 'false' (without HTTPS)
-        maxAge: 3600000 // Session lifetime: 1 hour
+        maxAge: 600000 // Session lifetime: 1 hour
     }
 }));
 

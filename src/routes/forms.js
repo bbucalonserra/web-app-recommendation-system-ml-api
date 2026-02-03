@@ -12,11 +12,30 @@ const db = require("../config/database.js");
 // Reminder: here it will always be what is defined in app + this. Example: if in app it is "/", it will
 // be / + forms; if it is + /teste, it will be /teste + /forms = /teste/forms.
 router.get("/forms", function(req, res) {
+
+    // Retrieving username saved during login or creation.
+    const loggedUser = req.session.username;
+
+    // If user hasn't logged in.
+    if (!loggedUser) {
+            return res.redirect("/login");
+        }
+
     return res.render("forms.ejs");
 });
 
 // Update forms.
 router.post("/forms", function (req, res) {
+
+    // Retrieving username saved during login or creation.
+    const loggedUser = req.session.username;
+
+    // Redirect to login.
+    if (!loggedUser) {
+        return res.redirect("/login");
+    }
+
+    // Varaibles from forms.
     const age = req.body.age;
     const sex = req.body.sex;
     const education = req.body.education;
@@ -27,11 +46,9 @@ router.post("/forms", function (req, res) {
     const loan_paid = req.body.loan_paid;
     const annual_salary = req.body.annual_salary;
     const invested_amount = req.body.invested_amount;
-    
-    // Retrieving username saved during login or creation.
-    const loggedUser = req.session.username;
 
-    //
+
+    // Variables.
     const createFormsQuery = `
         UPDATE forms
         SET
@@ -62,8 +79,8 @@ router.post("/forms", function (req, res) {
         loggedUser
     ];
 
-    //
-    db.run(createFormsQuery, params = params_forms, function(err){
+    // Running db.
+    db.run(createFormsQuery, params_forms, function(err){
         if (err) {
 
             // Return if error.
@@ -71,7 +88,7 @@ router.post("/forms", function (req, res) {
         } 
 
         // Update the forms completed flag to 1.
-        db.run("UPDATE users SET is_forms_completed = 1 WHERE username = ?", params = loggedUser, function(err){
+        db.run("UPDATE users SET is_forms_completed = 1 WHERE username = ?", loggedUser, function(err){
           if(err) {
             return res.send("Error updating the is_forms_completed column");
           }  
