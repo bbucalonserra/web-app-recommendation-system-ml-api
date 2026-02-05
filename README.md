@@ -6,8 +6,7 @@ For the Software Engineering side, applied concepts of:
 
 * API and HTTP methods (GET, POST)
 * Separation of concerns
-* Authentication
-* Authorisation
+* Authentication and Authorisation
 * Validation and Sanitisation
 * Three-tier architecture
 * Data Manipulation Language (DML) and Data Query Language (DQL) in SQL
