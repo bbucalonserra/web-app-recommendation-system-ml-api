@@ -45,6 +45,7 @@ app.use(sanitizer());
 // it reserves space to store information that survives while the user
 // jumps from page to page, that is, everything that starts with req.session.
 app.use(session({
+    name: 'session_id',
     secret: 'any-special-secret-text', // It can be any phrase
     resave: false, // Does not save the session if there are no changes
     saveUninitialized: false, // Creates a session even if nothing has been stored

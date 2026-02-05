@@ -66,7 +66,7 @@ $$
 C = \frac{1}{\lambda}
 $$
 
-* **C (Regularization) [0.000009]:** Strong regularization applied to control the magnitude of the Betas (Coefficients), preventing inflation and ensuring the model generalizes well to unseen transactional data.
+* **C (Regularization) [0.09]:** Strong regularization applied to control the magnitude of the Betas (Coefficients), preventing inflation and ensuring the model generalizes well to unseen transactional data.
 * **Solver [LBFGS]:** Selected for its computational efficiency, utilizing second-order derivatives (Hessian approximation) for faster gradient convergence.
 * **Penalty [L2]:** Ridge regression was implemented to handle multicollinearity among features while maintaining all predictors in the model.
 * **Max Iterations [10,000]:** Set high enough to guarantee convergence in complex feature spaces without bottlenecking training time.
